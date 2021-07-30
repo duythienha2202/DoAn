@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="contrl">
+            <div class="forward">
+                <div class="nav">
+                    <a href="{{ url_for('l_forward') }}">left-forward</a>
+                </div>
+                <div class="nav">
+                    <a href="{{ url_for('f_forward') }}">forward</a>
+                </div>
+                <div class="nav">
+                    <a href="{{ url_for('r_forward') }}">righ-forward</a>
+                </div>
+            </div>
+            <div class="stop">
+                <a href="{{ url_for('stop') }}">stop</a>
+            </div>
+            <div class="backward">
+                <div class="nav">
+                    <a href="{{ url_for('l_backward') }}">left-backward</a>
+                </div>
+                <div class="nav">
+                    <a href="{{ url_for('b_backward') }}">backward</a>
+                </div>
+                <div class="nav">
+                    <a href="{{ url_for('r_backward') }}">right-backward</a>
+                </div>
+            </div>
+        </div>
+        <div class="status">
+            <p>Your device is:</p>
+            <p>{% block content %}{% endblock %}</p>
+        </div>
+
+    </div>
+    <p style="padding-top: 50px;">Click
+        <a href="{{ url_for('logout') }}">Here</a> to logout
+    </p>
+</body>
+
+</html>
